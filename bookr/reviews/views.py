@@ -1,5 +1,5 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
 def index(request):
-    name = request.GET.get("name") or "World"
-    return HttpResponse(f"Hello, {name}. You're at the reviews index.")
+    name = "Django"
+    return render(request, 'base.html', {"name": name})
